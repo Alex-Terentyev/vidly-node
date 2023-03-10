@@ -1,5 +1,5 @@
 const winston = require('winston');
-require('winston-mongoDB');
+// require('winston-mongoDB');
 const { format } = winston;
 const { combine } = format;
 require('express-async-errors');
@@ -28,13 +28,13 @@ module.exports = function(){
             }),
 
         
-            new winston.transports.MongoDB({ 
-                db: config.get('db') ,
-                options: {
-                    useUnifiedTopology: true,
-                },
-                level: "error"
-            })
+            // new winston.transports.MongoDB({ 
+            //     db: config.get('db') ,
+            //     options: {
+            //         useUnifiedTopology: true,
+            //     },
+            //     level: "error"
+            // })
         ]
     })
     // winston.exceptions.handle(
