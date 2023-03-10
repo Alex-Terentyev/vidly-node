@@ -1,8 +1,9 @@
-require('winston-mongoDB');
 const winston = require('winston');
+require('winston-mongoDB');
 const { format } = winston;
 const { combine } = format;
 require('express-async-errors');
+const config = require('config');
 
 module.exports = function(){
     winston.configure({
@@ -28,7 +29,7 @@ module.exports = function(){
 
         
             new winston.transports.MongoDB({ 
-                db: "mongodb://127.0.0.1:27017/vidly" ,
+                db: config.get('db') ,
                 options: {
                     useUnifiedTopology: true,
                 },
