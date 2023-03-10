@@ -1,5 +1,5 @@
-const winston = require('winston');
 require('winston-mongoDB');
+const winston = require('winston');
 const { format } = winston;
 const { combine } = format;
 require('express-async-errors');
